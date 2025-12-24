@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Gift</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+function createSnow() {
+    const snowCount = 50;
+    for(let i=0;i<snowCount;i++){
+        let snow = document.createElement('div');
+        snow.className = 'snowflake';
+        snow.style.left = Math.random() * 100 + 'vw';
+        snow.style.fontSize = Math.random() * 20 + 10 + 'px';
+        snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+        snow.style.opacity = Math.random();
+        snow.innerText = '❄';
+        document.body.appendChild(snow);
+    }
+}
+createSnow();
+</script>
+
+<body class="gift">
+
+    <div class="container">
+        <h2>🎉 Congratulations My Love 🎉</h2>
+        <p>You scored amazingly… because you ARE amazing 💖</p>
+
+        <div class="gift-box" onclick="revealGift()">
+            Your gift baby 😘❤️
+        
+        <div id="gift" class="hidden">
+            
+            </p>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

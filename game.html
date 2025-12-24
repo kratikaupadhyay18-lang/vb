@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+function createSnow() {
+    const snowCount = 50;
+    for(let i=0;i<snowCount;i++){
+        let snow = document.createElement('div');
+        snow.className = 'snowflake';
+        snow.style.left = Math.random() * 100 + 'vw';
+        snow.style.fontSize = Math.random() * 20 + 10 + 'px';
+        snow.style.animationDuration = 5 + Math.random() * 10 + 's';
+        snow.style.opacity = Math.random();
+        snow.innerText = '❄';
+        document.body.appendChild(snow);
+    }
+}
+createSnow();
+</script>
+
+<body class="game">
+
+<div class="container">
+    <h2>🎄 How Well Do You Know My Heart? 🎄</h2>
+    <p>Each correct answer = 10 points ❤️</p>
+
+    <div class="quiz">
+
+        <!-- Question 1 -->
+        <div class="question" data-answered="false">
+            <p>1. What makes my day better instantly?</p>
+            <button onclick="checkAnswer(this, true)">D) Talking to you</button>
+            <button onclick="checkAnswer(this, false)">A) Coffee</button>
+            <button onclick="checkAnswer(this, false)">B) Good music</button>
+            <button onclick="checkAnswer(this, false)">C) A long nap</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question" data-answered="false">
+            <p>2. Who do I miss the most when I’m tired or stressed?</p>
+            <button onclick="checkAnswer(this, false)">A) My pets</button>
+            <button onclick="checkAnswer(this, false)">B) Comfort food</button>
+            <button onclick="checkAnswer(this, true)">C) You</button>
+            <button onclick="checkAnswer(this, false)">D) Sleep</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question" data-answered="false">
+            <p>3. When I’m upset, who can calm me down the fastest?</p>
+            <button onclick="checkAnswer(this, false)">A) Myself</button>
+            <button onclick="checkAnswer(this, false)">B) Time</button>
+            <button onclick="checkAnswer(this, false)">C) Music</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question" data-answered="false">
+            <p>4. Who knows my moods better than anyone else?</p>
+            <button onclick="checkAnswer(this, false)">A) My family</button>
+            <button onclick="checkAnswer(this, false)">B) My friends</button>
+            <button onclick="checkAnswer(this, false)">C) Me</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question" data-answered="false">
+            <p>5. What do I crave more than food sometimes?</p>
+            <button onclick="checkAnswer(this, false)">A) Sleep</button>
+            <button onclick="checkAnswer(this, false)">B) Peace</button>
+            <button onclick="checkAnswer(this, false)">C) Attention</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question" data-answered="false">
+            <p>6. Who do I want to talk to before sleeping?</p>
+            <button onclick="checkAnswer(this, false)">A) Anyone</button>
+            <button onclick="checkAnswer(this, false)">B) Whoever texts</button>
+            <button onclick="checkAnswer(this, false)">C) Nobody</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question" data-answered="false">
+            <p>7. Who makes me laugh even when I don’t want to?</p>
+            <button onclick="checkAnswer(this, false)">A) Memes</button>
+            <button onclick="checkAnswer(this, false)">B) Friends</button>
+            <button onclick="checkAnswer(this, false)">C) Myself</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question" data-answered="false">
+            <p>8. Who do I trust the most with my feelings?</p>
+            <button onclick="checkAnswer(this, false)">A) Myself</button>
+            <button onclick="checkAnswer(this, false)">B) My diary</button>
+            <button onclick="checkAnswer(this, false)">C) A close friend</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question" data-answered="false">
+            <p>9. Who is my safest place?</p>
+            <button onclick="checkAnswer(this, false)">A) Home</button>
+            <button onclick="checkAnswer(this, false)">B) Silence</button>
+            <button onclick="checkAnswer(this, false)">C) Music</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question" data-answered="false">
+            <p>10. If I had to choose one person every day, who would it be?</p>
+            <button onclick="checkAnswer(this, false)">A) Myself</button>
+            <button onclick="checkAnswer(this, false)">B) My future</button>
+            <button onclick="checkAnswer(this, false)">C) Comfort</button>
+            <button onclick="checkAnswer(this, true)">D) You</button>
+            <span class="result"></span>
+        </div>
+
+    </div>
+
+    <h3 id="score">Score: 0 / 100</h3>
+    <button onclick="goToGift()">🎁 Claim Your Gift 🎁</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
